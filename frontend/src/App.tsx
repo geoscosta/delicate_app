@@ -1,19 +1,22 @@
-import DataTable from 'component/DataTable';
-import Footer from 'component/Footer';
-import NavBar from './component/Navbar';
+import Footer from "component/Footer";
+import Navbar from "component/Navbar";
+import Home from "pages/Home";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
 
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <div className="container">
-        <h1 className="text-primary">Product</h1>
-
-        <DataTable />
-      </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 
